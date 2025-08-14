@@ -1,0 +1,153 @@
+html {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #ecf2f8;
+  margin: 0;
+  padding: 4rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 120rem;
+  margin: 10rem auto;
+}
+
+.card {
+  border-radius: 0.8rem;
+  padding: 2.5rem;
+  color: #fff;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+
+.purple {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  background-color: hsl(263, 55%, 52%);
+
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 4rem;
+  background-size: 12rem;
+}
+
+.gray {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: hsl(217, 19%, 35%);
+}
+
+.white {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #fff;
+  color: #333;
+}
+
+.dark {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  background-color: hsl(219, 29%, 14%);
+}
+
+.white:last-child {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.profile h4 {
+  font-weight: 700;
+}
+
+.profile p {
+  color: #cfcfcfff;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.content {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.purple .content {
+  color: #cfcfcfff;
+}
+
+.purple .profile {
+  color: #eee5ffff;
+}
+
+@media (max-width: 1024px) {
+  .card_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .purple {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .dark {
+    grid-column: 1 / -1;
+  }
+
+  .white:last-child {
+    grid-column: 1 /-1;
+    grid-row: auto;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card_container {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    grid-column: auto;
+    grid-row: auto;
+    transition: none;
+  }
+}
